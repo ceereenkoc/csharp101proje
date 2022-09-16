@@ -1,97 +1,93 @@
 ﻿using System;
 
-namespace csharp101proje;
-
-class Program
+namespace Operatörler
 {
-    static void Main(string[] args)
+    class Program
     {
-        Console.WriteLine("");
+        static void Main(string[] args)
+        {
+            // Atama ve İşlemli Atama
+            Console.WriteLine("Atamalar");
 
-        byte b = 5; // 1 byte yer kaplar. 0-255 arasında değer alır.
-        sbyte sb = 5; // 1 byte yer kaplar. -128 ile 127 arasında değer alır.
+            int x = 3;
+            int y = 3;
+            y = y+2; // Normal arttırma ve atama
+            Console.WriteLine(y);
+           
+            y += 2; // İşlemli atama
+            Console.WriteLine(y);
 
-        short s = 5; // 2 byte yer kaplar.
-        ushort us = 5; // 2 byte yer kaplar.
+            y /= 1;
+            Console.WriteLine(y);
 
-        Int16 i16 = 2; // 2 byte yer kaplar.
-        Int32 i32 = 2; // 4 byte yer kaplar.
-        Int64 i64 = 2; // 8 byte yer kaplar.
+            x *= 2;
+            Console.WriteLine(x);
 
-        int i = 2; // 4 byte yer kaplar.
-        uint ui= 2; // 4 byte yer kaplar.
+            //Mantıksal Operatörler 
+                // || --> veya
+                // && --> ve
+                // ! --> değil
+            Console.WriteLine("Mantıksal Operatörler");
+           
+            bool isSuccess = true;
+            bool isCompleted = false;
 
-        long l = 2; // 8 byte yer kaplar.
-        ulong ul = 2; // 8 byte yer kaplar.
+            if(isSuccess && isCompleted) // Çalıştırmadı çünkü biri true diğeri ise false olduğu için şart sağlanmadı.
+                Console.WriteLine("Perfect!");
+            if(isSuccess || isCompleted)
+                Console.WriteLine("Great!");
+            if(isSuccess && !isCompleted)
+                Console.WriteLine("Fine");
 
-        // Reel Sayılar için;
+            // İlişkisel Operatörler
+                // < (Küçüktür), <= (Küçük eşittir)
+                // > (Büyüktür), >= (Büyük eşittir
+                // == (Eşittir), != (Eşit değildir)
 
-        float f = 2; // 4 byte yer kaplar.
-        double d = 2; // 8 byte yer kaplar.
-        decimal de = 2; // 16 byte yer kaplar.
+            Console.WriteLine("İlişkisel Operatörler");
+            
+            int a = 3;
+            int b = 4;
 
-        //Karakterler için;
+            bool sonuç = a < b;
+            Console.WriteLine(sonuç);
+            sonuç = a > b;
+            Console.WriteLine(sonuç);
+            sonuç = a == b;
+            Console.WriteLine(sonuç);
+            sonuç = a != b; 
+            Console.WriteLine(sonuç);
+            sonuç = a <= b;
+            Console.WriteLine(sonuç);
+            sonuç = a >= b;
+            Console.WriteLine(sonuç);
+            
+            // Aritmetik Operatörler
+                // /, *, +, -
+            Console.WriteLine("Aritmetik Operatörler");
 
-        char c = '2'; // 2 byte yer kaplar. Tek karakter tanımlamak için uygundur.
-        string str = "Ceren"; // Sınırsız
+            int s1 = 10;
+            int s2 = 5;
+            int sonuç1 = s1 / s2;
+            Console.WriteLine(sonuç1);
+            sonuç1 = s1 * s2;
+            Console.WriteLine(sonuç1);
+            sonuç1 = s1 + s2;
+            Console.WriteLine(sonuç1);
+            sonuç1 = s2 - s1;
+            Console.WriteLine(sonuç1);
+            sonuç1 = s1++;
+            Console.WriteLine(s1);
+            sonuç1 = s2--;
+            Console.WriteLine(s2);
 
-        //True/False;
-        
-        bool b1 = true;
-        bool b2 = false;
+            // Mod alma operatörü (%) --> Kalanı bulmak için kullanılır.
 
-        //DateTime
+            int sonuç2 = 20%3;
+            Console.WriteLine(sonuç2);
+            sonuç2 = 20%2;
+            Console.WriteLine(sonuç2);
 
-        DateTime dt = DateTime.Now;
-        Console.WriteLine(dt);
-
-        // Obje değerleri;
-
-        object o1 = "x";
-        object o2 = 'y';
-        object o3 = 1 ;
-        object o4 = 4.3;
-
-        // string ifadeler;
-
-        string str1 = string.Empty;
-        str1 = "Ceren Koç";
-
-        string ad = "Ceren";
-        string soyad = "Koç";
-        string tamAd = ad + " " + soyad;
-
-        // integer ifadeler
-
-        int integer1 = 5;
-        int integer2 = 2;
-        int integer3 =  integer1 * integer2;
-
-        // boolean
-
-        bool bool1 = 10 > 2;
-        //Değişken Dönüşümleri;
-
-        string str20 = "20";
-        int int20 = 20;
-        string yeniDeger = str20 + int20.ToString();
-        Console.WriteLine(yeniDeger);
-
-        int int21 = int20 + Convert.ToInt32(str20);
-        Console.WriteLine(int21);
-
-        int int22 = int20+int.Parse(str20);
-    
-        //String DateTime
-
-        string datetime = DateTime.Now.ToString("dd.MM.yyyy");
-        Console.WriteLine(datetime);
-
-        string datetime1 = DateTime.Now.ToString("dd/MM/yyyy");
-        Console.WriteLine(datetime1);
-        
-        //Saat
-        string hour = DateTime.Now.ToString("HH:mm");
-        Console.WriteLine(hour);
-    }   
+        }
+    }
 }
