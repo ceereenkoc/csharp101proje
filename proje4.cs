@@ -2,7 +2,7 @@
 
 namespace HataYönetimi
 {
-    class project4
+    class proje4
     {
         static void Main(string[] args)
         {
